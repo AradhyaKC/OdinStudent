@@ -18,4 +18,3 @@ nodeList.forEach(element => {
 });
 button.appendChild(newHtmlNode);
 parentDiv.appendChild(button);
-console.log("running");
