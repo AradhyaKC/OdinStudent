@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rock Paper Scissors UI </title>
+    <script src="RPS.js" defer>
+
+    </script>
+    <link rel="stylesheet" href="RPS.css">
+    
+</head>
+<body style="background-color:black;" >
+    <div class="center">
+        <div class="parentFlex-container">
+            <div class="child flex-container"> 
+                <div class="child"> 
+                    <div>Your Choice</div>
+                    <div id="playerChoice" class="choice">Rock</div>
+                </div>
+                <div>
+                    Vs 
+                </div>
+                <div class="child"> 
+                    <div>Compueter's Choice</div>
+                    <div id="computerChoice" class="choice">Paper</div>
+                </div>
+            </div>
+            <div class="child flex-container"> 
+                <button data-key="rock">Rock</button>
+                <button data-key="paper">Paper</button>
+                <button data-key="scissors">Scissors</button>
+            </div>
+            <div class="child flex-container justifyAround">
+                <h3>Win<span style="color:green"> 0</span></h3>
+                <h3>Lose<span style="color:red" > 0</span></h3>
+                <h3>Draw<span style="color:yellow"> 0</span></h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
