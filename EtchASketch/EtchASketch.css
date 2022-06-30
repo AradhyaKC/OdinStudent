@@ -1,0 +1,32 @@
+.center{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+.flex-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.change{
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: 0px;
+    margin: 10px;
+}
+.grid-container{
+    display:grid;
+    border: 2px solid red;
+    gap:0px
+    min-width: 100px;
+    width: 300px;
+    height: 300px;
+}
+.tempChild{
+    background-color: lightblue;
+}
