@@ -6,7 +6,7 @@ var btnArray = Array.from(document.querySelectorAll(".button"));
 var decimalCount=0;
 var argumentArray =[null,null];
 var doSecond=false;
-
+window.addEventListener('keydown',onkeyDown);
 window.onload= ()=>{
     Clear();
     btnArray.forEach(element => {
@@ -72,6 +72,7 @@ window.onload= ()=>{
     });
 }
 
+
 function EvalOperands(){
     console.assert(argumentArray[0]!=null && argumentArray[1]!=null);
     switch(operation.textContent){
@@ -96,6 +97,20 @@ function EvalOperands(){
             argumentArray[0] = argumentArray[0]/argumentArray[1];
             break; 
         default : console.assert("unreferencd Case initiated");
+    }
+}
+
+function onkeyDown(e){
+    if (e.key == 'Backspace'){
+        if(argumentArray[+doSecond]==null ||argumentArray[+doSecond]=="NaN") return;
+        if(decimalCount==0){
+            argumentArray[+doSecond]= (argumentArray[+doSecond] - (argumentArray[+doSecond]%10))/10;
+        }else{
+            let temp = argumentArray[+doSecond].toString().slice(0,-1);
+            argumentArray[+doSecond] = Number.parseFloat(temp);
+            decimalCount--;
+        }
+        result.textContent=argumentArray[+doSecond];
     }
 }
 function Clear(){
