@@ -6,10 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Sign-Up-Form </title>
     <link rel="stylesheet" href="SignUpForm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <div class="center">
-        Hello world kjdkajkjans akjsckajsckajsn kajsnckajskcjansc  
+    <div class="center flex-container">
+        <div id="image-section"> 
+            <div id="logo-background">
+                <div id="image"></div>
+                <div style="font-size: 3rem;font-family:'Exo',sans-serif;" >Odin</div>
+            </div>
+        </div>
+        <div class="flex-container1" style="font-family :'Exo',sans-serif; font-size:medium;">
+            <div style="padding: 2%;"> <b>
+                <p>
+                    This is not a real service! You know you need something like this in your life to help 
+                    you to realize your deepest dreams . 
+                </p>
+                <p>
+                    Sign up now to get started 
+                </p>
+                <p> 
+                    You know you want to 
+                </p>
+            </b></div>
+            <div id="form-section" style="font-family: 'Roboto',sans-serif;">
+                <form style="padding: 2%;">
+                    <div style="font-family:'Exo',sans-serif;">Let's do this </div>
+                    <div id="input-container">
+                        <div class="input-item">
+                            <label for="FirstName"> FIRST NAME </label>
+                            <input type="text" placeholder="Name" name="FirstName" id="FirstName"
+                            title="Please Enter your first Name"> 
+                        </div>
+                        <div class="input-item">
+                            <label for="LastName"> LAST NAME</label>
+                            <input type="text" placeholder="lastName" name="LastName" id="LastName"
+                            title="Please enter your last Name">
+                        </div>
+                        <div class="input-item">
+                            <label for="Email">E-MAIL</label>
+                            <input type="email" placeholder="e-mail" name="Email" id="Email">
+                        </div>
+                        <div class="input-item">
+                            <label for="PhoneNum">PH .NO</label>
+                            <input type="number" placeholder="999999999" name="PhoneNum" id="PhoneNum"
+                            min="900000000" >
+                        </div>
+                        <div class="input-item">
+                            <label for="Password">PASSWORD</label>
+                            <input type="password" name="Password" id="Password">
+                        </div>
+                        <div class="input-item">
+                            <label for="CPassword">CONFIRM PASSWORD</label>
+                            <input type="password" name="CPassword" id="CPassword">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div >
+                <button type="submit" id="continue-btn" style="font-family:'Exo',sans-serif;"> Create Account </button>
+            </div>
+            <div style="margin-left: 20px; margin-top: 10px;font-size: small;"> Already have an account?
+                 <span style="color:darkolivegreen">Log In.</span>
+                </div>
+        </div>
     </div>
 </body>
 </html>
