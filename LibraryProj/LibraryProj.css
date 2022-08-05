@@ -1,0 +1,15 @@
+th , td{
+    border: 2px solid black;
+    margin: 3px;
+}
+
+.modal{
+    background-color: gray;
+    position:fixed;
+    top: -100%;
+    border: 2px solid black;
+}
+
+.modal.active{
+    top: 20%;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Library </title>
+    <link rel="stylesheet" href="LibraryProj.css">
+    <script src="LibraryProj.js" defer></script>
+</head>
+<body>
+    <div>   
+        <div class="modal">
+            <form>
+                <div>
+                    <label for="name"> Name</label>
+                    <input type="text" id="Name" name="Name" required>
+                    <label for="author">Author</label>
+                    <input type="text" id="Author" name="author" required>
+                    <label for="Pages">Enter no of Pages</label>
+                    <input type="number" id="Pages" name="Pages" required>
+                    <label for="Read" > Read</label>
+                    <input type="checkbox" id="Read" name="Read" required>
+                    <button type="button" onclick=""> Add book</button>
+                </div>
+            </form>
+        </div>
+        <button class="Addbook">  Add book </button>
+        <table id="table" style="border: 2px solid black; border-collapse: collapse;">
+            <tr>
+                <th> Name Of book </th>
+                <th> Author </th>
+                <th> No of pages</th>
+                <th> Read </th>
+                <th> Read button</th>
+            </tr>
+            <tr> 
+                <td> Temp </td>
+                <td> Temp </td>
+                <td> Temp </td>
+                <td> Temp </td>
+                <td> Temp </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
