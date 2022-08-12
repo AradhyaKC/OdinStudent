@@ -1,8 +1,13 @@
 {
   "private": "true",
   "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "csv-loader": "^3.0.5",
     "eslint": "^8.21.0",
