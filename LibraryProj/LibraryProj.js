@@ -37,9 +37,10 @@ Library.prototype.DisplayTable = function(tableElement){
         tdElement.innerHTML=element.read.toString();
         tdElement = document.createElement("td");
         var name = document.querySelector("#Name");
+        console.log(name);
         var buttonTag = document.createElement("button");
-        buttonTag.onclick = (e)=>{
-            var temp=element.Read();
+        buttonTag.onclick = ()=>{
+            element.Read();
             this.DisplayTable(document.getElementById("table"));
         }
         buttonTag.textContent="Click To Read";
@@ -53,12 +54,12 @@ Library.prototype.DisplayTable = function(tableElement){
 window.onload=()=>{
     var newLibrary= new Library();
     var Addbutton = document.querySelector("button.Addbook");
-    Addbutton.onclick= e=>{
+    Addbutton.onclick= ()=>{
         var modal=document.querySelector(".modal");
         modal.classList.add("active");
     };
     var AddVookbutton = document.querySelector("form button");
-    AddVookbutton.onclick = (e)=>{
+    AddVookbutton.onclick = ()=>{
         var name = document.querySelector("#Name");
         var author= document.querySelector("#Author");
         var pages = document.querySelector("#Pages");
