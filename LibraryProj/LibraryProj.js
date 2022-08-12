@@ -58,18 +58,31 @@ window.onload=()=>{
         modal.classList.add("active");
     };
     var AddVookbutton = document.querySelector("form button");
-    AddVookbutton.onclick = e=>{
-        var name = document.querySelector("#Name").value;
-        var author= document.querySelector("#Author").value;
-        var pages = document.querySelector("#Pages").value;
-        var read = document.querySelector("#Read").checked;
+    AddVookbutton.onclick = (e)=>{
+        var name = document.querySelector("#Name");
+        var author= document.querySelector("#Author");
+        var pages = document.querySelector("#Pages");
+        var read = document.querySelector("#Read");
         var modal=document.querySelector(".modal.active");
+
+        if(name.validity.valid) console.log("valid Name")
+        if(!name.validity.typeMismatch){
+            console.log('no mismatch');
+        } if (name.validity.tooLong){
+            console.log("your name is too fucking long. No Offence");
+        }if (name.validity.tooShort){
+            console.log("kjnacsjnkascjsjkacascjkscjnk");
+        }
+
+
         var newVook = new Vook();
-        newVook.name = name;
-        newVook.pages=pages;
-        newVook.author= author;
-        newVook.read=read;
+        newVook.name = name.value;
+        newVook.pages=pages.value;
+        newVook.author= author.value;
+        newVook.read=read.checked;
         newLibrary.AddVook(newVook);
         modal.classList.remove("active");
     }
 };
+
+
