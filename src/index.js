@@ -12,10 +12,10 @@ function component() {
 
     myIcon.src = myImage;
     console.log("hello ");
-    cosnole.log("hello this ");
+    console.log("hello this ");
   
   
-    element.appendChild(myIcon);
+    element.appendChild(myIcon)
     return element;
 }
   

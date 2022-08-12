@@ -1,8 +1,12 @@
 {
   "private": "true",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
     "css-loader": "^6.7.1",
     "csv-loader": "^3.0.5",
+    "eslint": "^8.21.0",
+    "eslint-plugin-react": "^7.30.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
@@ -11,8 +15,8 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "lint": "eslint ./"
   },
   "dependencies": {
     "lodash": "^4.17.21"
