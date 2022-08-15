@@ -17,6 +17,44 @@
             image.src = responseObj.data.images.original.url;
         }
         fetchFunction();
+        function power(base , exponent){
+            if(exponent==0) return 1;
+            return base * power(base,exponent-1);
+        }
+        factorio = function(number){
+            if(number==1) return 1; 
+            return number * factorio(number-1);
+        }
+
+        mergeSort = (array)=>{
+            console.log("hey");
+            console.assert(typeof array =='Array');
+            if(array.length==1) return array;
+            var leftArray = mergeSort(array.slice(0,(array.length-1/2)));
+            var rightArray = mergeSort(array.slice(array.length-1/2), array.length);
+            var returnedArray = [];
+            var leftIndex =0 ; var rightIndex = 0 ;
+            for(let i = 0 ; i < array.length;i++){
+                if(leftArray[leftIndex]<= rightArray[rightIndex]){
+                    returnedArray.push(leftArray[leftIndex]);
+                    leftIndex++;
+                }else{
+                    returnedArray.push(rightArray[rightIndex]);
+                    rightIndex++;
+                }
+
+                if(leftIndex==leftArray.length){
+                    returnedArray.push(...rightArray);
+                    break;
+                }else if (rightIndex == rightArray.length){
+                    returnedArray.push(...leftArray);
+                    break;
+                }
+            }
+            console.log(returnedArray);
+            return returnedArray;
+        };
+        console.log(mergeSort([8,7,6,5,4,3,2,1]));
     </script>
 </head>
 <body>
