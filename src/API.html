@@ -55,6 +55,60 @@
             return returnedArray;
         };
         console.log(mergeSort([8,7,6,5,4,3,2,1]));
+
+        function knightTravails(start,end){
+            var knightMoves = [[2,1],[2,-1],[-2,1],[-2,-1],[1,2],[-1,2],[1,-2],[-1,-2]];
+            var openQue=[];
+            var haveVisited= [];
+
+            function ChessMove(x,y){
+                this.x=x, this.y=y, this.predecessor=null
+            };
+
+            for(let i = 0; i<8;i++){
+                let hasVisitedRow = [];
+                for(let j =0;j<8;j++){
+                    hasVisitedRow.push(false);
+                }
+                haveVisited.push(hasVisitedRow);
+            }
+
+            CreateNewMoves(new ChessMove(start[0],start[1]));
+            haveVisited[start[1]][start[0]] =true;
+            while((openQue[0].x==end[0] && openQue[0].y==end[1])==false){
+                CreateNewMoves(openQue[0]);
+                openQue.shift();
+            }
+
+            var prevNode =openQue[0].predecessor;
+            //console.log(` prevNode [${prevNode.x}, ${prevNode.y}]`);
+            console.log("the path is from end to start is ");
+            console.log(openQue[0]);
+            console.log(prevNode);
+            while((prevNode.x==start[0] && prevNode.y==start[1])==false){
+                //console.log(` prevNode [${prevNode.x}, ${prevNode.y}]`);
+                prevNode=prevNode.predecessor;
+                console.log(prevNode);
+            }
+
+
+            function  CreateNewMoves(currentCoord){
+                //console.assert(currentCoord.prototype.isPrototypeof(ChessMove))
+                openQue.push(...knightMoves.map(element=>{ 
+                    let newChessMove = new ChessMove();
+                    newChessMove.x = element[0] +currentCoord.x;
+                    newChessMove.y = element[1] + currentCoord.y;
+                    newChessMove.predecessor = currentCoord;
+                    if(newChessMove.x <0 || newChessMove.x>7 || newChessMove.y<0||newChessMove.y>7 || 
+                        haveVisited[newChessMove.y][newChessMove.x]){
+                        return null;
+                    }
+                    haveVisited[newChessMove.y][newChessMove.x]= true;
+                    return newChessMove;
+                }).filter(element =>  (element!=null && element!=undefined)));
+            }
+        }
+
     </script>
 </head>
 <body>
