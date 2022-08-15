@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API attempt</title>
+    <script>
+        async function fetchFunction(){
+
+            var response = await fetch("https://api.giphy.com/v1/gifs/translate?api_key=h84IIgNAAT2uxWvoh6O8hl9Buu5RkVeY&s=cats",
+            {
+                mode:"cors"
+            }).catch((err)=>{ console.log("fetch failed for image"+err.toString());});
+            var image = document.querySelector("img");
+            var responseObj =await response.json().catch((err)=>{ console.log(" failed to json the response into js object")});
+            image.src = responseObj.data.images.original.url;
+        }
+        fetchFunction();
+    </script>
+</head>
+<body>
+    <img src="#">
+</body>
+</html>
