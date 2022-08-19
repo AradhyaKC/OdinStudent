@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/DynamicUserInteraction/Dropdown.js',
+  entry: './TTD/TTD.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
