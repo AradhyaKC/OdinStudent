@@ -5,3 +5,27 @@
   transform: translate(-50%,-50%);
 }
 
+.grid-container{
+  display: grid;
+  grid-auto-rows: 200px;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+
+.grid-element{
+  text-align: center;
+  background-color: red;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid black;
+  height: 100%;
+}
+
+.clicked{
+  background-color: green;
+}
+
