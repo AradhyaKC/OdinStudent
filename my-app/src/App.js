@@ -1,8 +1,10 @@
 import './App.css';
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import uniqid from "uniqid";
 import GeneralInfo from './CVApp1Com';
 import { useState } from 'react';
+import { ShoppingListContext } from './ShoppingItemsContext';
+import { Link } from 'react-router-dom';
 
 
 // class App extends React.Component {
@@ -142,6 +144,7 @@ import { useState } from 'react';
 // }
 
 function App(props){
+  const ShoppingListApi = useContext(ShoppingListContext);
   const [state,setState] = useState(()=>{
     var ClickArray=[];
     for(let i=0;i<20;i++){ ClickArray.push(false);}
@@ -150,14 +153,16 @@ function App(props){
   });
 
   const onDivClick= async (key)=>{
-    await setState((prevState=>{ 
+    setState((prevState=>{ 
       prevState.ClickArray[key]=true;
       return {...prevState};
     }));
+    ShoppingListApi.AddToCart(key);
   }
   return (
     <div className='grid-container App'>
       {console.log('rendering ' +state.ClickArray[9].toString()) }
+      <Link to='/Profile'> Clcik here to go to Profile</Link>
       {state.ClickArray.map((element,index)=> <div onClick={()=>{onDivClick(index);}} key={index}
        className={state.ClickArray[index]?"grid-element clicked":"grid-element"}> Hello World {index+1} </div>)}
     </div>
