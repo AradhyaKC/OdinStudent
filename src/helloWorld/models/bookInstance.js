@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const luxon = require('luxon');
+const { DateTime } = require('luxon');
 const Schema = mongoose.Schema;
 
 const bookInstanceSchema = new Schema({
@@ -14,5 +16,9 @@ bookInstanceSchema.virtual("url").get(function () {
  // We don't use an arrow function as we'll need the this object
  return `/catalog/bookinstance/${this._id}`;
 });
+bookInstanceSchema.virtual('due_back_formatted').get(function (){
+    return luxon.DateTime.fromJSDate(this.due_back).toLocaleString(DateTime.DATE_MED);
+});
 
-module.exports = mongoose.model('BookInstance',bookInstanceSchema);
+const Book = mongoose.model('BookInstance',bookInstanceSchema);
+module.exports =Book;
